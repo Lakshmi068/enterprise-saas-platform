@@ -10,8 +10,10 @@ public class Organization {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
     private String organizationName;
 
+    @Column(unique = true)
     private String stripeCustomerId;
 
     public Organization() {

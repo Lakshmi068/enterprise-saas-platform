@@ -1,33 +1,85 @@
-HELP.md
+##############################
+# Maven
+##############################
 target/
-.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+!.mvn/wrapper/maven-wrapper.jar
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
+##############################
+# IntelliJ IDEA
+##############################
+.idea/
+*.iml
+out/
+
+##############################
+# Eclipse / STS
+##############################
 .project
-.settings
+.classpath
+.settings/
+.factorypath
 .springBeans
 .sts4-cache
+.apt_generated
 
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
+##############################
+# VS Code
+##############################
+.vscode/
 
-### NetBeans ###
+##############################
+# NetBeans
+##############################
 /nbproject/private/
 /nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
 build/
-!**/src/main/**/build/
-!**/src/test/**/build/
 
-### VS Code ###
-.vscode/
+##############################
+# OS Files
+##############################
+.DS_Store
+Thumbs.db
+
+##############################
+# Logs
+##############################
+*.log
+logs/
+
+##############################
+# Environment Files
+##############################
+.env
+.env.*
+
+##############################
+# Build Files
+##############################
+*.class
+*.jar
+*.war
+*.ear
+
+##############################
+# Temporary Files
+##############################
+*.tmp
+*.swp
+
+##############################
+# Maven Wrapper
+##############################
+.mvn/timing.properties
+
+##############################
+# Docker
+##############################
+docker-data/
+
+##############################
+# Misc
+##############################
+HELP.md
