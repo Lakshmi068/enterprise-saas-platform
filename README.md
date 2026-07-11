@@ -1,84 +1,232 @@
-# Enterprise Multi-Tenant SaaS Backend
+# 🚀 SaaS Subscription Management Platform
 
-## Overview
+A production-style SaaS backend application built with **Spring Boot 3**, **Java 21**, **PostgreSQL**, **JWT Authentication**, **Stripe Payments**, and **Docker**.
 
-This project is a multi-tenant SaaS backend application built with Java 21 and Spring Boot.
-
-It enables organizations to manage users, authentication, subscriptions, and feature access.
+This project demonstrates how modern SaaS applications manage users, organizations, subscriptions, payments, and secure REST APIs.
 
 ---
 
-## Technologies Used
+## 📌 Features
 
-- Java 21
-- Spring Boot
-- Spring Security
-- PostgreSQL
-- Spring Data JPA
-- Hibernate
+### 🔐 Authentication
 - JWT Authentication
-- BCrypt
-- OAuth2 (Google & Microsoft) *(In Progress)*
-- Stripe *(In Progress)*
-- Swagger/OpenAPI *(In Progress)*
-- Maven
-
----
-
-## Features
-
-- User Registration
-- User Login
+- Spring Security
 - BCrypt Password Encryption
-- Organization Management
-- JWT Authentication *(In Progress)*
-- Stripe Billing *(In Progress)*
-- Feature Access Control *(In Progress)*
+- Secure REST APIs
+
+### 👥 Organization Management
+- Create Organization
+- Update Organization
+- Delete Organization
+- View Organizations
+
+### 💳 Subscription Management
+- Create Subscription
+- View Subscription
+- Manage Subscription Status
+- Stripe Customer Creation
+
+### 💰 Stripe Integration
+- Create Stripe Customer
+- Stripe Checkout Session
+- Stripe Webhook Integration
+- Subscription Payment Flow
+
+### 🚩 Feature Management
+- Feature Flags
+- Feature Availability API
+
+### 📖 API Documentation
+- Swagger UI
+- OpenAPI Documentation
+
+### 🐳 DevOps
+- Docker
+- Docker Compose
+- Maven Build
+
+### 🛡 Exception Handling
+- Global Exception Handler
+- Bean Validation
 
 ---
 
-## Project Structure
+# 🏗 Architecture
 
-src/main/java
-
-- entity
-- repository
-- service
-- controller
-- security
-- dto
-- config
+```
+               +---------------------+
+               |     React Client    |
+               +----------+----------+
+                          |
+                          |
+                    REST API
+                          |
+        +-----------------+-----------------+
+        |                                   |
+        |        Spring Boot Backend        |
+        |                                   |
+        +-----------------+-----------------+
+                          |
+          -----------------------------------
+          |                |                |
+          |                |                |
+     PostgreSQL        Stripe API      JWT Security
+```
 
 ---
 
-## Database
+# 🛠 Tech Stack
+
+| Technology | Version |
+|------------|---------|
+| Java | 21 |
+| Spring Boot | 3.x |
+| Spring Security | ✓ |
+| JWT | ✓ |
+| PostgreSQL | 16 |
+| Hibernate | JPA |
+| Maven | 3.x |
+| Docker | ✓ |
+| Swagger | OpenAPI |
+| Stripe | Latest SDK |
+
+---
+
+# 📂 Project Structure
+
+```
+src
+ ├── controller
+ ├── dto
+ ├── entity
+ ├── repository
+ ├── security
+ ├── service
+ ├── config
+ ├── exception
+ └── resources
+```
+
+---
+
+# 🔑 Authentication
+
+The application uses JWT Authentication.
+
+### Register
+
+```
+POST /api/v1/auth/register
+```
+
+### Login
+
+```
+POST /api/v1/auth/login
+```
+
+Returns
+
+```
+JWT Token
+```
+
+---
+
+# 📌 Organization APIs
+
+```
+POST   /api/v1/organizations
+
+GET    /api/v1/organizations
+
+GET    /api/v1/organizations/{id}
+
+PUT    /api/v1/organizations/{id}
+
+DELETE /api/v1/organizations/{id}
+```
+
+---
+
+# 💳 Stripe APIs
+
+### Create Checkout Session
+
+```
+POST /api/v1/stripe/checkout
+```
+
+### Stripe Webhook
+
+```
+POST /api/v1/stripe/webhook
+```
+
+---
+
+# 📖 Swagger
+
+```
+http://localhost:8080/swagger-ui/index.html
+```
+
+---
+
+# 🐳 Docker
+
+Build
+
+```bash
+docker compose build
+```
+
+Run
+
+```bash
+docker compose up
+```
+
+---
+
+# 🗄 Database
 
 PostgreSQL
 
----
+Tables
 
-## API Version
-
-/api/v1
-
----
-
-## Run the Project
-
-1. Clone repository
-
-2. Configure PostgreSQL
-
-3. Update application.properties
-
-4. Run
-
-```
-mvn spring-boot:run
-```
+- users
+- organizations
+- subscriptions
+- feature_flags
 
 ---
 
-## Author
+# 🚀 Future Improvements
 
-Lakshmi Padmavathi
+- Role Based Authentication
+- Refresh Tokens
+- Email Verification
+- Password Reset
+- Subscription Upgrade/Downgrade
+- Audit Logs
+- CI/CD Pipeline
+- Kubernetes Deployment
+
+---
+
+# 👩‍💻 Author
+
+**Lakshmi Padmavathi**
+
+Java Full Stack Developer
+
+GitHub:
+https://github.com/Lakshmi068
+
+LinkedIn:
+(Add your LinkedIn profile here)
+
+---
+
+## ⭐ If you found this project helpful, consider giving it a Star!
