@@ -1,373 +1,227 @@
-# 🚀 Enterprise SaaS Subscription Management Platform
+# 🚀 Enterprise SaaS Platform
 
-![Java](https://img.shields.io/badge/Java-21-orange)
-![Spring Boot](https://img.shields.io/badge/SpringBoot-3.x-brightgreen)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-blue)
-![Spring Security](https://img.shields.io/badge/Spring%20Security-JWT-success)
-![Stripe](https://img.shields.io/badge/Stripe-Payments-purple)
-![Docker](https://img.shields.io/badge/Docker-Container-blue)
-![Swagger](https://img.shields.io/badge/API-Swagger-green)
-![License](https://img.shields.io/badge/License-MIT-lightgrey)
+A production-ready Full Stack Enterprise SaaS Platform built with **Java 21, Spring Boot, React, TypeScript, PostgreSQL, JWT Authentication, and Stripe Integration**.
 
-A production-style SaaS backend application built with **Spring Boot 3**, **Java 21**, **PostgreSQL**, **Spring Security**, **JWT Authentication**, **Stripe Payments**, and **Docker**.
-
-This project demonstrates how modern SaaS platforms securely manage users, organizations, subscriptions, online payments, and REST APIs using industry-standard backend development practices.
+This project demonstrates enterprise software development practices including secure authentication, RESTful APIs, layered architecture, responsive frontend design, and subscription management.
 
 ---
 
 # ✨ Features
 
-## 🔐 Authentication & Security
+## 🔐 Authentication
 
 - User Registration
-- User Login
+- Secure Login
 - JWT Authentication
-- Spring Security
-- BCrypt Password Encryption
-- Stateless Authentication
+- Password Encryption using BCrypt
 - Protected REST APIs
 
----
+## 🏢 Organization Management
 
-## 👥 Organization Management
-
-- Create Organization
-- Update Organization
-- Delete Organization
+- Create Organizations
 - View Organizations
-
----
+- Update Organizations
+- Delete Organizations
+- Search Organizations
 
 ## 💳 Subscription Management
 
 - Create Subscription
-- View Subscription
-- Manage Subscription Status
-- Associate Subscription with Organizations
-- Stripe Customer Creation
-
----
+- View Active Subscriptions
+- Organization Subscription Mapping
+- Plan Management
 
 ## 💰 Stripe Integration
 
 - Stripe Customer Creation
-- Stripe Checkout Session
-- Secure Stripe Webhook Verification
-- Subscription Payment Processing
-- Payment Success Event Handling
+- Checkout Session Integration
+- Payment Ready Architecture
+
+## 📊 Dashboard
+
+- Responsive Dashboard
+- Enterprise UI
+- Material UI Components
+- Statistics Cards
 
 ---
 
-## 🚩 Feature Management
+# 🛠 Technology Stack
 
-- Feature Flags
-- Feature Availability APIs
+## Backend
 
----
+- Java 21
+- Spring Boot 3
+- Spring Security
+- Spring Data JPA
+- Hibernate
+- JWT Authentication
+- Maven
 
-## 📖 API Documentation
+## Frontend
 
-- Swagger UI
-- OpenAPI Documentation
+- React 19
+- TypeScript
+- Material UI
+- React Router
+- Axios
 
----
+## Database
 
-## 🛡 Exception Handling
+- PostgreSQL
 
-- Global Exception Handler
-- Validation Handling
-- Meaningful Error Responses
-
----
-
-## 🐳 DevOps
+## Cloud & DevOps
 
 - Docker
-- Docker Compose
-- Maven
-- Environment Variables (.env)
+- AWS Ready
+- Git
+- GitHub
+
+## Payment
+
+- Stripe API
+
+## Documentation
+
+- Swagger / OpenAPI
 
 ---
 
 # 🏗 Architecture
 
 ```
-                    +-----------------------+
-                    |     React Client      |
-                    +-----------+-----------+
-                                |
-                           REST APIs
-                                |
-                +---------------+---------------+
-                |                               |
-                |     Spring Boot Backend       |
-                |                               |
-                +---------------+---------------+
-                                |
-        --------------------------------------------------
-        |                     |                         |
-        |                     |                         |
-   PostgreSQL            Stripe API              JWT Security
+React + TypeScript
+        │
+        ▼
+Spring Boot REST APIs
+        │
+        ▼
+Spring Security + JWT
+        │
+        ▼
+Business Service Layer
+        │
+        ▼
+Spring Data JPA
+        │
+        ▼
+PostgreSQL
+        │
+        ▼
+Stripe API
 ```
 
 ---
 
-# 🛠 Technology Stack
-
-| Category | Technology |
-|-----------|------------|
-| Language | Java 21 |
-| Framework | Spring Boot 3 |
-| Security | Spring Security, JWT |
-| ORM | Spring Data JPA, Hibernate |
-| Database | PostgreSQL |
-| Payments | Stripe API |
-| Build Tool | Maven |
-| Containerization | Docker, Docker Compose |
-| API Documentation | Swagger / OpenAPI |
-
----
-
-# 📂 Project Structure
+# 📁 Project Structure
 
 ```
-src
-├── controller
-├── service
-├── repository
-├── entity
-├── dto
-├── security
-│   └── jwt
-├── exception
-├── config
-└── resources
+enterprise-saas-platform
+│
+├── backend
+│   ├── Controllers
+│   ├── Services
+│   ├── Repositories
+│   ├── Entities
+│   ├── Security
+│   └── Configuration
+│
+├── frontend
+│   ├── Pages
+│   ├── Components
+│   ├── Layouts
+│   ├── API
+│   └── Context
+│
+└── README.md
 ```
 
 ---
 
-# 🔐 Environment Variables
+# 📸 Screenshots
 
-Sensitive configuration is **not stored in the repository**.
+### Login
 
-Create a `.env` file using the provided `.env.example`.
+(Add Screenshot)
 
-Example:
+### Register
 
-```properties
-DB_URL=jdbc:postgresql://localhost:5432/saas_db
-DB_USERNAME=postgres
-DB_PASSWORD=your_password
+(Add Screenshot)
 
-JWT_SECRET=your_jwt_secret
+### Dashboard
 
-STRIPE_SECRET_KEY=your_stripe_secret_key
-STRIPE_PUBLISHABLE_KEY=your_publishable_key
-STRIPE_WEBHOOK_SECRET=your_webhook_secret
-```
+(Add Screenshot)
+
+### Organizations
+
+(Add Screenshot)
+
+### Subscription
+
+(Add Screenshot)
 
 ---
 
-# ▶ Running Locally
+# 🔌 REST API
 
-## Clone Repository
+## Authentication
 
-```bash
-git clone https://github.com/Lakshmi068/enterprise-saas-platform.git
-```
+- POST /api/v1/auth/register
+- POST /api/v1/auth/login
 
-## Navigate to Project
+## Organizations
 
-```bash
-cd enterprise-saas-platform
-```
+- GET /api/v1/organizations
+- POST /api/v1/organizations
+- PUT /api/v1/organizations/{id}
+- DELETE /api/v1/organizations/{id}
 
-## Run Application
+## Subscriptions
 
-Using Maven Wrapper
+- GET /api/v1/subscriptions
+- POST /api/v1/subscriptions
 
-```bash
-./mvnw spring-boot:run
-```
+---
 
-or
+# 🚀 Getting Started
+
+## Backend
 
 ```bash
 mvn spring-boot:run
 ```
 
----
-
-# 🐳 Running with Docker
-
-Build the application
+## Frontend
 
 ```bash
-docker compose build
-```
-
-Start all services
-
-```bash
-docker compose up
-```
-
-Stop containers
-
-```bash
-docker compose down
+npm install
+npm run dev
 ```
 
 ---
 
-# 📚 Available REST APIs
+# 🌟 Future Enhancements
 
-## Authentication
-
-```
-POST /api/v1/auth/register
-POST /api/v1/auth/login
-```
-
----
-
-## Organizations
-
-```
-POST   /api/v1/organizations
-GET    /api/v1/organizations
-GET    /api/v1/organizations/{id}
-PUT    /api/v1/organizations/{id}
-DELETE /api/v1/organizations/{id}
-```
-
----
-
-## Users
-
-```
-User Management APIs
-```
-
----
-
-## Features
-
-```
-Feature Management APIs
-```
-
----
-
-## Subscriptions
-
-```
-Subscription Management APIs
-```
-
----
-
-## Stripe
-
-```
-POST /api/v1/stripe/checkout
-POST /api/v1/stripe/webhook
-```
-
----
-
-# 📖 Swagger Documentation
-
-Once the application is running:
-
-```
-http://localhost:8080/swagger-ui/index.html
-```
-
----
-
-# 🗄 Database
-
-Database:
-
-- PostgreSQL 16
-
-Primary Tables
-
-- users
-- organizations
-- subscriptions
-- features
-
----
-
-# 🔒 Security
-
-This application follows modern backend security practices:
-
-- JWT Authentication
-- BCrypt Password Encryption
-- Stateless Authentication
-- Spring Security Filter Chain
-- Protected REST APIs
-- Secure Stripe Webhook Signature Verification
-
----
-
-# 📸 Project Highlights
-
-- ✅ JWT Authentication
-- ✅ PostgreSQL Integration
-- ✅ Stripe Checkout
-- ✅ Stripe Webhooks
-- ✅ Dockerized Application
-- ✅ Environment Variable Configuration
-- ✅ Swagger Documentation
-- ✅ Layered Architecture
-- ✅ Production-style Backend Design
-
----
-
-# 🚀 Future Enhancements
-
-- Role-Based Access Control (RBAC)
-- Refresh Token Authentication
 - Email Verification
-- Forgot Password / Reset Password
-- Subscription Upgrade & Downgrade Workflows
-- Redis Caching
-- Kafka Event Streaming
-- AWS Deployment
+- Password Reset
+- Role-Based Access Control (RBAC)
+- Multi-Tenant Support
+- AI-Powered Analytics Dashboard
+- AI Chat Assistant using Spring AI
+- OpenAI Integration
+- Retrieval-Augmented Generation (RAG)
 - Kubernetes Deployment
-- CI/CD Pipeline (GitHub Actions)
-- Monitoring with Prometheus & Grafana
+- CI/CD Pipeline
 
 ---
 
-# 👩‍💻 Author
+# 👨‍💻 Author
 
-**Lakshmi Padmavathi**
+**Lakshmi Padmavathi Devara**
 
-Senior Java Full Stack Developer
-
-GitHub
-
-https://github.com/Lakshmi068
-
-LinkedIn
-
-> https://www.linkedin.com/in/lakshmi-devara-a5ab301aa/
+- GitHub: https://github.com/Lakshmi068
+- LinkedIn: https://www.linkedin.com/in/lakshmipadmavathi/
 
 ---
 
-# 📄 License
-
-This project is licensed under the MIT License.
-
----
-
-## ⭐ Support
-
-If you found this project helpful, please consider giving it a ⭐ on GitHub.
-
-It helps others discover the project and supports continued development.
+⭐ If you found this project useful, consider giving it a star!
