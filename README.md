@@ -138,28 +138,27 @@ enterprise-saas-platform
 
 ---
 
-# 📸 Screenshots
+## 📸 Screenshots
 
 ### Login
 
-(Add Screenshot)
+![Login](screenshots/login.png)
 
 ### Register
 
-(Add Screenshot)
+![Register](screenshots/register.png)
 
 ### Dashboard
 
-(Add Screenshot)
+![Dashboard](screenshots/dashboard.png)
 
 ### Organizations
 
-(Add Screenshot)
+![Organizations](screenshots/organizations.png)
 
 ### Subscription
 
-(Add Screenshot)
-
+![Subscription](screenshots/subscription.png)
 ---
 
 # 🔌 REST API
