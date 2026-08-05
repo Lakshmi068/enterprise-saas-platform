@@ -142,7 +142,7 @@ enterprise-saas-platform
 
 ### Login
 
-![Login](screenshots/login.png)
+![Login](screenshots/login.png.png)
 
 ### Register
 
